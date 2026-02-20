@@ -1,6 +1,6 @@
 # Browser History Extraction Tool
 
-This repository contains a Python script to extract browser history from Chrome/Edge SQLite database files and export the data to CSV format for analysis.
+A Python script to extract browser history from Chrome/Edge SQLite database files and export the data to CSV format for forensic analysis or data migration.
 
 ## 📋 Prerequisites
 
@@ -10,7 +10,29 @@ This repository contains a Python script to extract browser history from Chrome/
 - **VS Code** - [Download from code.visualstudio.com](https://code.visualstudio.com/)
 - **VS Code Python Extension** - Install from VS Code Extensions marketplace
 
-## 🚀 Setup Instructions
+## 🚀 Getting Started
+
+### Option 1: Using Git (Recommended)
+**Requires Git installation:**
+1. Install Git from [git-scm.com/download/win](https://git-scm.com/download/win)
+2. Open Command Prompt or PowerShell
+3. Run: `git clone https://github.com/sternyz/browser-history-extractor.git`
+4. Navigate to the folder: `cd browser-history-extractor`
+5. Open in VS Code: `code .`
+
+**Benefits:** Easy updates, version control, professional workflow
+
+### Option 2: Download ZIP (Quick Start)
+**No Git required:**
+1. Go to [github.com/sternyz/browser-history-extractor](https://github.com/sternyz/browser-history-extractor)
+2. Click the green "Code" button
+3. Select "Download ZIP"
+4. Extract the ZIP file to your desired location
+5. Open the extracted folder in VS Code
+
+**Benefits:** No additional software needed, works immediately
+
+## �� Setup Instructions
 
 ### Step 1: Install Python
 1. Go to [python.org/downloads](https://python.org/downloads/)
@@ -26,15 +48,15 @@ This repository contains a Python script to extract browser history from Chrome/
 4. Install the official Python extension by Microsoft
 5. Restart VS Code if prompted
 
-### Step 3: Clone/Download the Repository
-1. Clone this repository: `git clone https://github.com/sternyz/git.git`
+### Step 3: Download/Clone the Repository
+1. Clone this repository: `git clone [your-new-repo-url]`
 2. Or download the ZIP file from GitHub and extract it
 3. Open the folder in VS Code: `File > Open Folder`
 
 ## 🔧 Configuration
 
 ### Update Browser History Path
-Before running the script, you need to update the database path in `scripts/history.py`:
+Before running the script, you need to update the database path in `history.py`:
 
 **For Chrome:**
 ```python
@@ -58,20 +80,19 @@ conn = sqlite3.connect(r"C:\Users\[Username]\AppData\Local\Microsoft\Edge\User D
 ## 🏃‍♂️ Running the Script
 
 ### Method 1: Run from VS Code (Recommended)
-1. Open `scripts/history.py` in VS Code
+1. Open `history.py` in VS Code
 2. Press `F5` or click the "Run" button (▶️)
 3. The script will execute and show output in the terminal
 4. Check for the generated `Chrome_history.csv` file
 
 ### Method 2: Run from Terminal
 1. Open VS Code terminal (Ctrl+`)
-2. Navigate to the script directory: `cd scripts`
-3. Run: `python history.py`
+2. Run: `python history.py`
 
 ### Method 3: Run from Command Prompt
 1. Open Command Prompt
 2. Navigate to the repository folder
-3. Run: `python scripts/history.py`
+3. Run: `python history.py`
 
 ## 📊 Output
 

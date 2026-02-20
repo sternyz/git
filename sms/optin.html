@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SMS Opt-In | Tributary Idaho</title>
+  <meta name="robots" content="index,follow" />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.4; margin: 0; padding: 24px; }
+    .wrap { max-width: 720px; margin: 0 auto; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 20px; }
+    label { display: block; margin: 12px 0 6px; font-weight: 600; }
+    input[type="text"], input[type="tel"], input[type="email"] { width: 100%; padding: 10px 12px; border: 1px solid #ccc; border-radius: 10px; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .muted { color: #555; font-size: 0.95rem; }
+    .tiny { color: #666; font-size: 0.9rem; }
+    .consent { display: flex; gap: 10px; align-items: flex-start; margin-top: 14px; }
+    .consent input { margin-top: 4px; }
+    button { margin-top: 14px; padding: 10px 14px; border: 0; border-radius: 10px; cursor: pointer; }
+    a { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>SMS Opt-In</h1>
+    <p class="muted">
+      Opt in to receive text updates from <strong>Tributary Idaho</strong> related to helpdesk support tickets
+      (e.g., updates, scheduling, troubleshooting coordination). No marketing.
+    </p>
+
+    <div class="card">
+      <!--
+        IMPORTANT:
+        - Replace action="/sms/optin" with your real endpoint (CRM, form handler, etc.).
+        - Keep the consent checkbox unchecked by default, and required.
+      -->
+      <form method="post" action="/sms/optin" novalidate>
+        <div class="row">
+          <div>
+            <label for="firstName">First name</label>
+            <input id="firstName" name="firstName" type="text" autocomplete="given-name" required />
+          </div>
+          <div>
+            <label for="lastName">Last name</label>
+            <input id="lastName" name="lastName" type="text" autocomplete="family-name" required />
+          </div>
+        </div>
+
+        <label for="mobile">Mobile phone number</label>
+        <input
+          id="mobile"
+          name="mobile"
+          type="tel"
+          inputmode="tel"
+          autocomplete="tel"
+          placeholder="+1 307-555-0123"
+          required
+        />
+
+        <label for="email">Email (optional)</label>
+        <input id="email" name="email" type="email" autocomplete="email" />
+
+        <div class="consent">
+          <input id="smsConsent" name="smsConsent" type="checkbox" required />
+          <label for="smsConsent" style="margin: 0; font-weight: 400;">
+            <!-- This consent language is taken from the doc’s compliant example and expanded with your company name and links. -->
+            I agree to receive recurring automated text messages from <strong>Factory Information Technology (Factory IT)</strong>
+            at the phone number provided. Msg &amp; data rates may apply. Msg frequency varies.
+            Reply <strong>HELP</strong> for help and <strong>STOP</strong> to end.
+            View our <a href="https://sms.tributaryidaho.com/toc" target="_blank" rel="noopener">Terms of Service</a>
+            and <a href="https://sms.tributaryidaho.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>.
+            <!-- Source baseline text: “I agree to receive recurring automated text messages…” etc. -->
+          </label>
+        </div>
+
+        <p class="tiny">
+          Tip: If you opt out by replying STOP, you’ll receive no further messages unless you re-opt in.
+        </p>
+
+        <button type="submit">Opt In</button>
+      </form>
+    </div>
+
+    <p class="tiny" style="margin-top: 14px;">
+      Need help? Email <a href="mailto:help@factoryinfotech.com">license@tributaryidaho.com</a> or call
+      <a href="tel:+1-208-354-9660">1-208-354-9660</a>.
+    </p>
+  </div>
+</body>
+</html>
